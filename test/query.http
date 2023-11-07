@@ -1,0 +1,23 @@
+###
+GET http://localhost:4004/odata/v4/emp/Employees
+
+###
+POST http://localhost:4004/odata/v4/emp/Employees
+Content-Type: application/json
+
+{
+    "empId":"1008",
+    "empName":"KiranK",
+    "empDesg":"TL",
+    "empAdd":"TG",
+    "empSalary":"100050",
+    "empPos": "U4",
+    "toProject": [
+                {
+                    "PrjCode": "IK001",
+                    "PrjName": "IkeaRetail",
+                    "PrjDesc": "Retail"
+                }
+                ]
+}
+

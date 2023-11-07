@@ -1,0 +1,71 @@
+<mvc:View
+    controllerName="com.fsapp.fsapp.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>view2}" navButtonPress="onPressBack" showNavButton="true"
+    >
+        <content >
+        <ObjectHeader
+		
+		title="Employee Name"
+		
+		class="sapUiResponsivePadding--header" >
+		<statuses>
+			<ObjectStatus
+				text="Permenant Employee"
+				state="Success" />
+		
+		</statuses>
+		
+	</ObjectHeader>
+
+     <Table
+                id="idTable"
+                >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Project Details" />
+                        <ToolbarSpacer />
+                        <Button
+                            press="onAdd" text="Add"
+                            icon="sap-icon://add"
+                        />
+                       
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Emp Id" />
+                    </Column>
+                    <Column>
+                        <Text text="Project Code" />
+                    </Column>
+                    <Column>
+                        <Text text="Project Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Project Desc" />
+                    </Column>
+                  
+                </columns>
+                <!-- <items>
+                    <ColumnListItem type="Navigation">
+                        <cells>
+                            <Text  />
+                            <Text  />
+                            <Text  />
+                            <Text />
+                            <Text />
+                            <Text />
+                        </cells>
+                    </ColumnListItem>
+                </items> -->
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

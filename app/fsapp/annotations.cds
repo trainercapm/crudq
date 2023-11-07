@@ -1,0 +1,1 @@
+using EmpService as service from '../../srv/data-service';

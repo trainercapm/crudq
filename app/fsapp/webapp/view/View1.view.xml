@@ -1,0 +1,103 @@
+<mvc:View
+    controllerName="com.fsapp.fsapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                id="idTable"
+                mode="SingleSelectLeft"
+                items="{path:'/Employees',parameters:{$$updateGroupId:'empGroup'}}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Employee Records" />
+                        <ToolbarSpacer />
+                        <Button
+                            press="onEdit"
+                            icon="sap-icon://edit"
+                        />
+                        <Button
+                            press="onCreate"
+                            icon="sap-icon://create"
+                        />
+                        <Button
+                            press="onDelete"
+                            icon="sap-icon://delete"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Emp Id" />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Desg" />
+                    </Column>
+                    <Column>
+                        <Text text="Add" />
+                    </Column>
+                    <Column>
+                        <Text text="Salary" />
+                    </Column>
+                    <Column>
+                        <Text text="Position" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation">
+                        <cells>
+                            <Text text="{empId}" />
+                            <Text text="{empName}" />
+                            <Text text="{empDesg}" />
+                            <Text text="{empAdd}" />
+                            <Text text="{empSalary}"/>
+                            <Text text="{empPos}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+          <f:SimpleForm visible="false" id="idSF" editable="true" labelSpanL="2" labelSpanS="2" layout="ResponsiveGridLayout" emptySpanL="4">
+          <f:content>
+          <Label text="Employee Id"/>
+          <Input id="idEmpId" value="{empId}" />
+           <Label text="Employee Designation"/>
+          <Input id="idEmpDesg" value="{empDesg}"/>
+           <Label text="Employee Name"/>
+          <Input id="idEmpName" value="{empName}"/>
+           <Label text="Employee Address"/>
+          <Input id="idEmpAdd" value="{empAdd}"/>
+           <Label text="Employee Salary"/>
+          <Input id="idEmpSal" value="{empSalary}"/>
+           <Label text="Employee Position"/>
+          <Input id="idEmpPos" value="{empPos}" />
+           <Label />
+<Button  id="idCreate"
+                            press="onSFCreate" text="Save"
+                            icon="sap-icon://save"
+                        />
+                        <Button id="idUpdate"
+                            press="onSFUpdate" text="Update"
+                            icon="sap-icon://cloud"
+                        />
+            </f:content>
+
+             </f:SimpleForm>
+        </content>
+        <footer>
+        <Bar>
+        <contentLeft>
+        <Button text="View 2" press="onNavV2"/>
+        </contentLeft>
+          </Bar>
+        </footer>
+    </Page>
+</mvc:View>
