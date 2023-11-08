@@ -11,10 +11,14 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
-    "@sap/ux-specification": "^1.108.16"
+    "@sap/ux-specification": "^1.108.17"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-fsapp": "cds watch --open fsapp/webapp/index.html?sap-ui-xx-viewCache=false"
-  }
+    "watch-fsapp": "cds watch --open fsapp/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-feapp": "cds watch --open feapp/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/feapp"
+  ]
 }
