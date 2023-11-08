@@ -1,7 +1,7 @@
 empId;empName;empDesg;empAdd;empSalary;empPos;
-1001;Kiran;TL;TG;100050;Temp;
-1002;Renga;PM;US;100050;Permenant;
-1003;Anwer;PM;US;100050;Temp;
-1004;Kishore;TL;TG;100050;Temp;
-1005;Mitra;PM;US;100050;Permenant;
-1006;Vignesh;PM;US;100050;Temp;
+1001;Kiran;Team Lead;TG;100050;Temp;
+1002;Renga;Project Manager;US;100050;Permenant;
+1003;Anwer;Project Manager;US;100050;Temp;
+1004;Kishore;Team Lead;TG;100050;Temp;
+1005;Mitra;Project Manager;US;100050;Permenant;
+1006;Vignesh;Project Manager;US;100050;Temp;
