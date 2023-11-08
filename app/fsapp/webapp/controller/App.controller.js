@@ -7,6 +7,8 @@ sap.ui.define(
   
       return BaseController.extend("com.fsapp.fsapp.controller.App", {
         onInit() {
+        },
+        onInit() {
         }
       });
     }
