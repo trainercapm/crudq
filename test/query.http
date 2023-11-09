@@ -7,8 +7,8 @@ Content-Type: application/json
 
 {
     "empId":"1008",
-    "empName":"KiranK",
-    "empDesg":"TL",
+    "empName":"Kiran Kiran",
+    "empDesg":"Team Lead",
     "empAdd":"TG",
     "empSalary":"100050",
     "empPos": "U4",
@@ -21,3 +21,86 @@ Content-Type: application/json
                 ]
 }
 
+
+###GET REQUEST 
+GET http://localhost:4004/odata/v4/employee/Employee
+
+###POST operation
+POST http://localhost:4004/odata/v4/employee/Employee
+Content-Type: application/json
+
+{
+  "EmpID": "1005",
+  "Name": "Yamini",
+  "Desg": "SSE",
+  "Skill": "CAPM",
+  "Email": "sontakke@gmail.com",
+  "Phone": "800000000",
+  "Salary": 150000,
+  "Status": "Permanent",
+  "StatusCriticality": 3
+}
+
+###PUT
+PUT http://localhost:4004/odata/v4/employee/Employee('1000')
+Content-Type: application/json
+
+{
+  "EmpID": "1000",
+  "Name": "Yamini Sontakke",
+  "Desg": "SSE",
+  "Skill": "CAPM",
+  "Email": "sontakke@gmail.com",
+  "Phone": "800000000",
+  "Salary": 150000,
+  "Status": "Permanent",
+  "StatusCriticality": 3
+}
+
+###DELETE
+DELETE http://localhost:4004/odata/v4/employee/Employee('1000')
+Content-Type: application/json
+
+{
+  "EmpID": "1000",
+  "Name": "Yashu ",
+  "Desg": "SSE",
+  "Skill": "CAPM",
+  "Email": "sontakke@gmail.com",
+  "Phone": "800000000",
+  "Salary": 150000,
+  "Status": "Permanent",
+  "StatusCriticality": 3
+}
+
+###
+GET http://localhost:4004/odata/v4/employee//Employees('1001')?$expand=toProjects
+
+###
+GET http://localhost:4004/odata/v4/employee//Employees?$expand=toProjects
+
+###
+POST http://localhost:4004/odata/v4/employee/Employees
+Content-Type: application/json
+
+{
+  "EmpId": "1006",
+  "Name": KIRAN  VS",
+  "Desg": "SSE",
+  "Skill": "CAPM",
+  "Email": "kv@gmail.com",
+  "Phone": "800000000",
+  "Salary": 150000,
+  "Status": "Permanent",
+  "StatusCriticality": 3,
+  "toProjects": [
+    {
+      "PrjCode": "PRJ003",
+      "EmpId": "1001",
+      "clientName": "Nokia",
+      "PrjName": "Digital",
+      "PrjDesc": "Digitilization",
+      "TeamSize": 3
+    }
+  ]
+}

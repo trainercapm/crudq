@@ -7,6 +7,7 @@ entity  employees {
     empAdd:String(20);
     empSalary:String;
     empPos:String;
+    StatusCriticality:String;
     //toProject:Association to many projects on toProject.empId=empId;
     toProject:Composition of  many projects on toProject.empId=empId;
 }
