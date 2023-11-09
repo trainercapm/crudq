@@ -68,4 +68,14 @@ module.exports = srv => {
         const tx = cds.transaction(req)
         return await tx.run(DELETE(Employees).where({empId:req.data.empId}));
     });
+
+    srv.on("getEmpbyPos", req => {
+
+        console.log("getEmpbyPos Testing");
+        console.log(req.data);
+        const Employees = cds.entities;
+        const tx = cds.transaction(req);
+        return tx.run(SELECT.from(Employees).where({ empPos : req.data.empPos }));
+        
+    });
 }
