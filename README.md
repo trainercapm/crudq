@@ -24,3 +24,7 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+
+# Actions : alter the data
+# functions can only read the data from backend

@@ -12,7 +12,6 @@ Content-Type: application/json
     "empAdd":"TG",
     "empSalary":"100050",
     "empPos": "U4",
-    
     "toProject": [
                 {
                     "PrjCode": "IK001",
@@ -24,3 +23,11 @@ Content-Type: application/json
 
 ###
 GET  http://localhost:4004/odata/v4/emp/getEmpbyPos(empPos='Temp')
+
+###
+POST http://localhost:4004/odata/v4/emp/makePermenant
+Content-Type: application/json
+
+{
+     "empId":"1001"
+}

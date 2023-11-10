@@ -12,7 +12,7 @@ module.exports = srv => {
     //         return tx.run(SELECT.from(Employees));
     //     }
     // });
-    
+
     srv.after("READ", "Employees", rs => {
         console.log("Read Testing");
         console.log(rs);
@@ -39,11 +39,11 @@ module.exports = srv => {
     // });
 
     srv.on("CREATE", "Employees", req => {
-        if (req.data.Status === "Permenant"){ 
-                    req.data.StatusCriticality = "PRIO-1";
-                }else{
-                req.data.StatusCriticality = "PRIO-2";
-                }
+        if (req.data.Status === "Permenant") {
+            req.data.StatusCriticality = "PRIO-1";
+        } else {
+            req.data.StatusCriticality = "PRIO-2";
+        }
         const Employees = cds.entities;
         const tx = cds.transaction(req)
         return tx.run(INSERT.into(Employees)
@@ -60,22 +60,33 @@ module.exports = srv => {
     srv.on("UPDATE", "Employees", async req => {
         const Employees = cds.entities;
         const tx = cds.transaction(req)
-        return await tx.run(UPDATE(Employees).set({empPos:req.data.empPos}).where({empId:req.data.empId}));
+        return await tx.run(UPDATE(Employees).set({ empPos: req.data.empPos }).where({ empId: req.data.empId }));
     });
 
     srv.on("DELETE", "Employees", async req => {
-        const Employees = cds.entities;
+        const { Employees } = cds.entities;
         const tx = cds.transaction(req)
-        return await tx.run(DELETE(Employees).where({empId:req.data.empId}));
+        return await tx.run(DELETE(Employees).where({ empId: req.data.empId }));
     });
 
     srv.on("getEmpbyPos", req => {
 
         console.log("getEmpbyPos Testing");
-        //console.log(req.data);
-        const Employees = cds.entities;
-        const tx = cds.transaction(req);
-        return tx.run(SELECT.from(Employees).where({ empPos : req.data.empPos }));
-        
+        console.log(req.data);
+        const { Employees } = cds.entities;
+        const tx = cds.transaction(req)
+        return tx.run(SELECT.from(Employees).where({ empId: req.data.empId }));
+
+    });
+
+    srv.on("makePermenant", req => {
+
+        console.log("makePermenant Testing");
+        console.log(req.data);
+        const { Employees } = cds.entities;
+        const tx = cds.transaction(req)
+        tx.run(UPDATE(Employees).set({ empPos: req.data.empPos }).where({ empId: req.data.empId }));
+        return { message: "Sucessfully updated" }
+
     });
 }
